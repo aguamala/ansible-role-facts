@@ -1,20 +1,23 @@
-Role Name
+ansible-role-facts
 =========
 
 Create custom facts
 
 Role Variables
 --------------
-
-facts_name: custom 
-facts_sub_name: subname
-facts_dict:
-  fact1: 1
-  fact2: 2
+```
+custom_facts:
+  - section: metadata
+    settings:
+      - key: environment
+        value: production
+      - key: owner
+        value: rudi.broekhuizen@naturalis.nl
+```
 
 Access facts
 
-{{ ansible_local.custom.subname.fact1 }} 
+{{ ansible_local.custom_facts }} 
 
 License
 -------
